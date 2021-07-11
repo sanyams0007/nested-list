@@ -1,0 +1,71 @@
+.main-head {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.list-container label {
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+/**
+   * Styling first level lists items
+   */
+
+.group-list label {
+  padding-left: 1rem;
+}
+
+/**
+   * Styling second level list items
+   */
+
+.sub-group-list label {
+  padding-left: 1rem;
+}
+
+/**
+   * Styling third level list items
+   */
+
+.sub-sub-group-list label {
+  padding-left: 1rem;
+}
+
+/**
+   * Hide all other nested lists
+   */
+
+.group-list,
+.sub-group-list,
+.sub-sub-group-list,
+.sub-sub-sub-group-list,
+.sub-sub-sub-sub-group-list,
+.sub-sub-sub-sub-sub-group-list {
+  height: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.main__list input[type="checkbox"]:checked + label + ul {
+  /* reset the height when checkbox is checked */
+  max-height: 1000px;
+}
+
+label > span {
+  padding: 3px;
+  margin-right: 5px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  font: normal normal normal 15px/1 FontAwesome;
+}
+
+.main__list input[type="checkbox"]:checked + label > span {
+  transform: rotate(90deg);
+}
